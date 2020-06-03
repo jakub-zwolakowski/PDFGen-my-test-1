@@ -64,3 +64,6 @@ FORCE:
 clean:
 	rm -f *$(O_SUFFIX) tests/*$(O_SUFFIX) testprog *.gcda *.gcno *.gcov tests/*.gcda tests/*.gcno output.pdf output.txt tests/fuzz-ppm tests/fuzz-jpg tests/fuzz-header tests/fuzz-text output.pdftk fuzz.jpg fuzz.ppm fuzz.pdf doxygen.log tests/penguin.c valgrind.log
 	rm -rf docs fuzz-artifacts infer-out
+
+tis-fuzz-header: tests/tis-fuzz-header.c
+	afl-clang -I. -g -o $@ $< pdfgen.c
