@@ -1037,7 +1037,7 @@ static int pdf_add_stream(struct pdf_doc *pdf, struct pdf_object *page,
     if (!obj)
         return pdf->errval;
 
-    dstr_printf(&obj->stream, "<< /Length %zd >>stream\r\n", len);
+    dstr_printf(&obj->stream, "<< /Length %zu >>stream\r\n", len);
     dstr_append_data(&obj->stream, buffer, len);
     dstr_append(&obj->stream, "\r\nendstream\r\n");
 
