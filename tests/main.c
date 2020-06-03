@@ -3,6 +3,7 @@
 
 #include "pdfgen.h"
 
+#define TIS_BLOB 1
 extern unsigned char data_penguin_jpg[];
 extern unsigned int data_penguin_jpg_len;
 
@@ -180,7 +181,11 @@ int main(int argc, char *argv[])
     pdf_append_page(pdf);
 
     pdf_set_font(pdf, "Times-Roman");
+#ifdef __TRUSTINSOFT_ANALYZER__
+    for (i = 0; i < TIS_BLOB; i++) {
+#else
     for (i = 0; i < 3000; i++) {
+#endif
         int xpos = (i / 100) * 40;
         int ypos = (i % 100) * 10;
         pdf_add_text(pdf, NULL, "Text blob", 8, xpos, ypos,
