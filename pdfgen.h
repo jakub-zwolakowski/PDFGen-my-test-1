@@ -156,7 +156,7 @@ struct pdf_path_operation {
  * Utility macro to provide a transparent colour
  * This is used in some places for 'fill' colours, where no fill is required
  */
-#define PDF_TRANSPARENT (uint32_t)(0xff << 24)
+#define PDF_TRANSPARENT (uint32_t)((uint32_t)0xff << 24)
 
 /**
  * Different alignment options for rendering text
