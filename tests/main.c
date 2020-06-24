@@ -3,7 +3,7 @@
 
 #include "pdfgen.h"
 
-#define TIS_BLOB 1
+#define TIS_BLOB 3000
 extern unsigned char data_penguin_jpg[];
 extern unsigned int data_penguin_jpg_len;
 
